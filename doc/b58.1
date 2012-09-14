@@ -1,0 +1,35 @@
+.Dd $MDocdate$
+.Dt b58 1
+.Os
+.Sh NAME
+.Nm b58
+.Nd encode a number as base 58
+.Sh SYNOPSIS
+.Nm b58
+.Op OPTIONS
+.Op NUMBER
+.Sh DESCRIPTION
+.Nm b58 
+encodes its input in base 58 and writes the result to standard
+output, followed by a newline.  If the input is given as the
+.Ar NUMBER
+argument, it may be given as a decimal, or as hexadecimal with prefix 0x.
+If no 
+.Ar NUMBER
+argument is present, 
+.Nm b58
+reads from its standard input.  In this case the format of the
+input is raw binary data.
+
+The default base58 encoding is the bitcoin encoding, but others
+may be selected as described in OPTIONS.  The bitcoin encoding
+isn't really base58 encoding, since leading zeroes are encoded
+with each zero byte encoded as a single "1".
+
+.Sh OPTIONS
+
+FIXME: fix markup later.
+
+  -f     Flickr-style encoding
+
+  -
