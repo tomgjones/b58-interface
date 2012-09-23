@@ -5,8 +5,8 @@ Base58-encoding.  This is a family of encoding schemes used by Bitcoin,
 as well as in various online services including URL shorteners
 and photo web sites.
 
-The program for encoding is [b58](html/b58.1.html).
-The program for decoding is [b58-dec](html/b58-dec.1.html).
+The program for encoding is [b58](http://htmlpreview.github.com/?https://github.com/tomgjones/b58-interface/blob/master/html/b58.1.html).
+The program for decoding is [b58-dec](http://htmlpreview.github.com/?https://github.com/tomgjones/b58-interface/blob/master/html/b58-dec.1.html).
 
 # Formats
 
