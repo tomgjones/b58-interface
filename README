@@ -50,6 +50,9 @@ In this context we consider adding new interface elements to be a
 backwards-compatible change, but changing the meaning of existing
 elements to be backwards-incompatible.
 
+Unreleased versions are not included when considering backwards
+compatibility.
+
 # Known Implementations
 
 # Known Test Suites
@@ -63,5 +66,3 @@ for more information.
 The intention is that it should be easy for implementors to include
 all or part of the interface specification in their works, for example
 bundling manpages with their implementations.
-
-
