@@ -1,155 +1,111 @@
-Content-type: text/html
+<!-- Creator     : groff version 1.20.1 -->
+<!-- CreationDate: Sun Sep 23 19:25:20 2012 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       h1      { text-align: center }
+</style>
+<title></title>
+</head>
+<body>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML><HEAD><TITLE>Man page of b58</TITLE>
-</HEAD><BODY>
-<H1>b58</H1>
-Section: User Commands  (1)<BR><A HREF="#index">Index</A>
-<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
-<BR>BSD mandoc<BR>
-<A NAME="lbAB">&nbsp;</A>
-<H2>NAME</H2>
-
-
-
-<B>b58</B>
-
- - encode a number as base 58
-
-<A NAME="lbAC">&nbsp;</A>
-<H2>SYNOPSIS</H2>
-
-<B></B>
+<hr>
 
 
-[-<B>f</B>
+<p>b58(1) BSD General Commands Manual b58(1)</p>
 
-]
+<p style="margin-top: 1em"><b>NAME</b></p>
 
-[-<B>b</B>
+<p style="margin-left:6%;"><b>b58</b> &mdash; encode a
+number as base 58</p>
 
-]
+<p style="margin-top: 1em"><b>SYNOPSIS</b></p>
 
-[-<B>n</B>
+<p style="margin-left:12%;"><b>b58</b> [<b>&minus;f</b>]
+[<b>&minus;b</b>] [<b>&minus;n</b>] [INPUT]
+[BINDATA&nbsp;...]</p>
 
-]
+<p style="margin-top: 1em"><b>DESCRIPTION</b></p>
 
-[INPUT]
+<p style="margin-left:6%;"><b>b58</b> encodes its input in
+base 58 and writes the result to standard output, followed
+by a newline. If the <i>INPUT</i> argument is given, it may
+be given as a decimal, or as hexadecimal with prefix 0x. IF
+no <i>INPUT</i> argument is present, <b>b58</b> reads from
+its standard input. In this case the format of the input is
+raw binary data by default.</p>
 
-[BINDATA ...]
+<p style="margin-left:6%; margin-top: 1em">The default
+base58 encoding is the Bitcoin encoding, but others may be
+selected as described in OPTIONS. The bitcoin encoding
+isn&rsquo;t purely a base58 encoding, since leading zeroes
+are encoded with each full zero byte encoded as a single
+&quot;1&quot;. This does mean that the Bitcoin scheme is
+fully reversible, even in cases where the input is a binary
+string starting with null bytes. The Bitcoin alphabet for
+the base58 part is
+&quot;123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz&quot;.</p>
 
-<A NAME="lbAD">&nbsp;</A>
-<H2>DESCRIPTION</H2>
+<p style="margin-left:6%; margin-top: 1em">Options are:</p>
 
-<B></B>
+<p style="margin-top: 1em"><b>&minus;f</b></p>
 
-
-encodes its input in base 58 and writes the result to standard
-output, followed by a newline.  If the
-<I>INPUT</I>
-
-argument is given, it may be given as a decimal, 
-or as hexadecimal with prefix 0x.
-IF no
-<I>INPUT</I>
-
-argument is present, 
-<B></B>
-
-
-reads from its standard input.  In this case the format of the
-input is raw binary data by default.
-<P>
-
-The default base58 encoding is the Bitcoin encoding, but others
-may be selected as described in OPTIONS.  The bitcoin encoding
-isn't purely a base58 encoding, since leading zeroes are encoded
-with each full zero byte encoded as a single &quot;1&quot;.  This does mean
-that the Bitcoin scheme is fully reversible, even in cases where the
-input is a binary string starting with null bytes.  The Bitcoin
-alphabet for the base58 part is
-&quot;123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz&quot;.
-<P>
-
-Options are:
-<DL COMPACT>
-<P>
-
-<DT><B>-f</B>
-
-
-<DD>
-Flickr-style encoding.  This uses an alphabet of 
+<p style="margin-left:17%; margin-top: 1em">Flickr-style
+encoding. This uses an alphabet of
 &quot;123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ&quot;
-and is a function of the numeric value of the input, which means
-that in the case of the input being a binary string, multiple
-inputs can produce the same output due to leading zeroes.
-<DT><B>-b , -bytes</B>
+and is a function of the numeric value of the input, which
+means that in the case of the input being a binary string,
+multiple inputs can produce the same output due to leading
+zeroes.</p>
 
+<p style="margin-top: 1em"><b>&minus;b</b>,
+<b>&minus;-bytes</b></p>
 
-<DD>
-Treat the input as a string of bytes, even if the input data is provided
-in the arguments.  In this case, additional binary data may be
-given as the extra arguments
-<I>BINDATA ...</I>
+<p style="margin-left:17%;">Treat the input as a string of
+bytes, even if the input data is provided in the arguments.
+In this case, additional binary data may be given as the
+extra arguments <i>BINDATA ...</i>. The input byte string is
+then all of <i>INPUT</i> and <i>BINDATA ...</i> joined with
+null bytes.</p>
 
- 
-The input byte string is then all of
-<I>INPUT</I>
+<p style="margin-top: 1em"><b>&minus;n</b>,
+<b>&minus;-numeric</b></p>
 
-and
-<I>BINDATA ...</I>
+<p style="margin-left:17%;">Treat the input as a number
+(decimal or hexadecimal, as described above), even if the
+input data is provided on standard input. In this case, the
+data fed to standard input is allowed to contain a single
+newline at the end.</p>
 
-joined with null bytes.
-<DT><B>-n , -numeric</B>
+<p style="margin-top: 1em"><b>EXIT STATUS</b></p>
 
+<p style="margin-left:6%;">The <b>b58</b> utility
+exits&nbsp;0 on success, and&nbsp;&gt;0 if an error
+occurs.</p>
 
-<DD>
-Treat the input as a number (decimal or hexadecimal, as described above),
-even if the input data is provided on standard input.  In this case,
-the data fed to standard input is allowed to contain a single newline
-at the end.
-</DL>
-<P>
+<p style="margin-top: 1em"><b>SECURITY
+CONSIDERATIONS</b></p>
 
-<A NAME="lbAE">&nbsp;</A>
-<H2>EXIT STATUS</H2>
+<p style="margin-left:6%;">On most systems, process
+arguments are visible to other users. So if you&rsquo;re
+processing confidential data, feed <b>b58</b> its input on
+its standard input, rather than via its argument list.</p>
 
-Ex -std b58
+<p style="margin-top: 1em"><b>INTERFACE VERSION</b></p>
 
-<A NAME="lbAF">&nbsp;</A>
-<H2>SECURITY CONSIDERATIONS</H2>
+<p style="margin-left:6%;">This version of b58(1) is part
+of version 0.1 of b58-interface.</p>
 
-On most systems, process arguments are visible to other users.  So if
-you're processing confidential data, feed
-<B></B>
-
-
-its input on its standard input, rather than via its argument list.
-<A NAME="lbAG">&nbsp;</A>
-<H2>INTERFACE VERSION</H2>
-
-This version of
-<A HREF="/cgi-bin/man/man2html?1+b58">b58</A>(1)
-
-
-is part of version 0.1 of b58-interface.
-<P>
-
-<HR>
-<A NAME="index">&nbsp;</A><H2>Index</H2>
-<DL>
-<DT><A HREF="#lbAB">NAME</A><DD>
-<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
-<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
-<DT><A HREF="#lbAE">EXIT STATUS</A><DD>
-<DT><A HREF="#lbAF">SECURITY CONSIDERATIONS</A><DD>
-<DT><A HREF="#lbAG">INTERFACE VERSION</A><DD>
-</DL>
-<HR>
-This document was created by
-<A HREF="/cgi-bin/man/man2html">man2html</A>,
-using the manual pages.<BR>
-Time: 15:40:23 GMT, September 23, 2012
-</BODY>
-</HTML>
+<p style="margin-left:6%; margin-top: 1em">BSD
+September&nbsp;23, 2012 BSD</p>
+<hr>
+</body>
+</html>

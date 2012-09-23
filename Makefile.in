@@ -513,7 +513,7 @@ uninstall-man: uninstall-man1
 
 html:  html/b58.1.html html/b58-dec.1.html
 html/%.html: doc/%
-	man2html $< > $@
+	groff -man -Thtml $< > $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
